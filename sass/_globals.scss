@@ -1,0 +1,235 @@
+@use "components" as comp;
+
+@mixin section-display {
+    max-width: 992px;
+    width: 100%;
+    padding: 3rem;
+    margin: auto;
+    justify-content: center;
+}
+
+html {
+    min-width: 100vw;
+}
+
+body {
+    padding: 0%;
+    margin: 0;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 4rem;
+    border-bottom: solid 1px #ddd;
+}
+
+.home-img {
+    img {
+        margin-left: 2rem;
+        max-height: 350px;
+        width: auto;
+        border-radius: 3%;
+        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
+    }
+}
+
+.sec-home {
+    display: flex;
+    align-items: center;
+    @include section-display();
+    .home-cta {
+        flex: 0.7;
+        .cta-text {
+            color: comp.$color-main;
+        }
+        .home-title {
+            width: 20rem;
+            font-size: 3rem;
+        }
+        .home-description {
+            font-size: 0.9rem;
+            width: 300px;
+        }
+        .lead-magnet {
+            .input-col {
+                max-width: 200px
+            }
+        }
+    }
+}
+
+.sec-features {
+    @include section-display();
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .intro {
+        text-align: center;
+        h3 {
+            font-size: 1.5rem;
+        }
+        p {
+            font-size: 1rem;
+            color: #8888;
+        }
+    }
+    .features {
+        margin: auto;
+        display: flex;
+        gap: 1rem;
+        .colum-features {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            .text {
+                flex: 1;
+                padding: 1rem;
+                max-width: 70%;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                .description {
+                    margin-left: 1rem;
+                    .description-title {
+                        font-size: 1.15rem;
+                    }
+                    .description-text {
+                        font-size: 0.9rem;
+                        width: 100%;
+                    }
+            }
+            }
+        }
+    .img {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        img {
+            width: 20rem;
+            height: auto;
+            align-self: center;
+        }
+    }
+    }
+}
+
+.sec-benefits {
+    border-top: 1px solid #ddd;
+    .intro {
+        @extend .sec-features, .intro;
+    }
+    .benfefit-cards {
+        width: 100%;
+        padding: 0 2rem 2rem 2rem;
+    }
+}
+
+.sec-kpis {
+    width: 100%;
+    background-color: comp.$color-main;
+    color: white;
+    padding: 4rem;
+    .kpi {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .number {
+            font-size: 3.5rem;
+            font-weight: 600;
+        }
+        .desc {
+            font-size: 0.9rem;
+            color: #ffffffaa;
+        }
+    }
+}
+
+.sec-onboarding {
+    .intro {
+        @extend .sec-features, .intro;
+    }
+    .steps {
+        padding: 0 7rem 5rem 7rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .step-separator {
+            flex: 1;
+            border-top: 2px solid #ddd;
+            margin: 0 1rem;
+        }
+    }
+}
+
+.sec-footercta {
+    background-color: comp.$color-footer;
+    padding: 5rem;
+    background-image: url(https://cdni.iconscout.com/illustration/premium/thumb/cute-astronaut-watering-bitcoin-plant-illustration-download-in-svg-png-gif-file-formats--spaceman-doing-investment-business-illustrations-4073224.png);
+    background-repeat: no-repeat;
+    background-position: 100%;
+    background-size: contain;
+    .footer-cta {
+        width: 50%;
+        .cta-title {
+            font-size: 2rem;
+        }
+        .cta-description {
+            font-size: 1.1rem;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .sec-onboarding {
+        .steps {
+            flex-direction: column;
+            .icon-desc {
+                .title {
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    .sec-footercta {
+        background-image: none;
+        .footer-cta {
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+    .sec-benefits {
+        padding: 1rem;
+        .intro {
+            .colum-features {
+                text-align: center;
+            .intro h3 {
+                font-size: 2rem;
+            }
+            }
+        }
+        
+    }
+
+    .sec-features {
+        .intro {
+            .colum-features {
+                padding: 0%;
+            }
+            max-width: 100%;
+            padding: 0%;
+            .text {
+                margin: 0%;
+                max-width: 100%;
+            }
+        }
+    }
+}
