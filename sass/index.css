@@ -58,25 +58,25 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2196078431);
 }
 
-.feature {
+.benefit {
   display: flex;
   flex-direction: column;
 }
-.feature .icon {
+.benefit .icon {
   color: #0075FF;
-  font-size: 10rem;
+  font-size: 7.5rem;
   text-align: center;
 }
-.feature .description .title {
+.benefit .description .title {
   font-size: 2rem;
   text-align: center;
 }
-.feature .description .text {
+.benefit .description .text {
   color: #555;
   font-weight: 600;
   text-align: center;
 }
-.feature .cta {
+.benefit .cta {
   margin: 3rem;
   color: #0075FF;
   font-weight: 600;
@@ -88,7 +88,7 @@
   flex-direction: column;
   align-items: center;
 }
-.icon-desc .icon {
+.icon-desc i {
   color: #0075FF;
   font-size: 10rem;
   padding: 0;
@@ -97,6 +97,10 @@
   margin-top: -2rem;
   font-size: 1.5rem;
   font-weight: 600;
+}
+
+html {
+  min-width: 100vw;
 }
 
 body {
@@ -142,10 +146,13 @@ body {
 }
 .sec-home .home-cta .home-description {
   font-size: 0.9rem;
-  width: 20rem;
+  width: 300px;
+}
+.sec-home .home-cta .lead-magnet .input-col {
+  max-width: 200px;
 }
 
-.sec-features {
+.sec-features, .sec-onboarding .intro, .sec-benefits .intro {
   max-width: 992px;
   width: 100%;
   padding: 3rem;
@@ -155,29 +162,29 @@ body {
   flex-direction: column;
   align-items: center;
 }
-.sec-features .intro {
+.sec-features .intro, .sec-onboarding .intro .intro, .sec-benefits .intro .intro {
   text-align: center;
 }
-.sec-features .intro h3 {
+.sec-features .intro h3, .sec-onboarding .intro .intro h3, .sec-benefits .intro .intro h3 {
   font-size: 1.5rem;
 }
-.sec-features .intro p {
+.sec-features .intro p, .sec-onboarding .intro .intro p, .sec-benefits .intro .intro p {
   font-size: 1rem;
   color: rgba(136, 136, 136, 0.5333333333);
 }
-.sec-features .features {
+.sec-features .features, .sec-onboarding .intro .features, .sec-benefits .intro .features {
   margin: auto;
   display: flex;
   gap: 1rem;
 }
-.sec-features .features .colum-features {
+.sec-features .features .colum-features, .sec-onboarding .intro .features .colum-features, .sec-benefits .intro .features .colum-features {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100%;
 }
-.sec-features .features .colum-features .text {
+.sec-features .features .colum-features .text, .sec-onboarding .intro .features .colum-features .text, .sec-benefits .intro .features .colum-features .text {
   flex: 1;
   padding: 1rem;
   max-width: 70%;
@@ -185,30 +192,119 @@ body {
   flex-direction: row;
   align-items: center;
 }
-.sec-features .features .colum-features .text .description {
+.sec-features .features .colum-features .text .description, .sec-onboarding .intro .features .colum-features .text .description, .sec-benefits .intro .features .colum-features .text .description {
   margin-left: 1rem;
 }
-.sec-features .features .colum-features .text .description .description-title {
+.sec-features .features .colum-features .text .description .description-title, .sec-onboarding .intro .features .colum-features .text .description .description-title, .sec-benefits .intro .features .colum-features .text .description .description-title {
   font-size: 1.15rem;
 }
-.sec-features .features .colum-features .text .description .description-text {
+.sec-features .features .colum-features .text .description .description-text, .sec-onboarding .intro .features .colum-features .text .description .description-text, .sec-benefits .intro .features .colum-features .text .description .description-text {
   font-size: 0.9rem;
   width: 100%;
 }
-.sec-features .features .img {
+.sec-features .features .img, .sec-onboarding .intro .features .img, .sec-benefits .intro .features .img {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
 }
-.sec-features .features .img img {
+.sec-features .features .img img, .sec-onboarding .intro .features .img img, .sec-benefits .intro .features .img img {
   width: 20rem;
   height: auto;
   align-self: center;
 }
 
+.sec-benefits {
+  border-top: 1px solid #ddd;
+}
+.sec-benefits .benfefit-cards {
+  width: 100%;
+  padding: 0 2rem 2rem 2rem;
+}
+
 .sec-kpis {
+  width: 100%;
   background-color: #0075FF;
   color: white;
+  padding: 4rem;
+}
+.sec-kpis .kpi {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.sec-kpis .kpi .number {
+  font-size: 3.5rem;
+  font-weight: 600;
+}
+.sec-kpis .kpi .desc {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6666666667);
+}
+
+.sec-onboarding .steps {
+  padding: 0 7rem 5rem 7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sec-onboarding .steps .step-separator {
+  flex: 1;
+  border-top: 2px solid #ddd;
+  margin: 0 1rem;
+}
+
+.sec-footercta {
+  background-color: #f4f8fe;
+  padding: 5rem;
+  background-image: url(https://cdni.iconscout.com/illustration/premium/thumb/cute-astronaut-watering-bitcoin-plant-illustration-download-in-svg-png-gif-file-formats--spaceman-doing-investment-business-illustrations-4073224.png);
+  background-repeat: no-repeat;
+  background-position: 100%;
+  background-size: contain;
+}
+.sec-footercta .footer-cta {
+  width: 50%;
+}
+.sec-footercta .footer-cta .cta-title {
+  font-size: 2rem;
+}
+.sec-footercta .footer-cta .cta-description {
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .sec-onboarding .steps {
+    flex-direction: column;
+  }
+  .sec-onboarding .steps .icon-desc .title {
+    text-align: center;
+  }
+  .sec-footercta {
+    background-image: none;
+  }
+  .sec-footercta .footer-cta {
+    width: 100%;
+    text-align: center;
+  }
+  .sec-benefits {
+    padding: 1rem;
+  }
+  .sec-benefits .intro .colum-features {
+    text-align: center;
+  }
+  .sec-benefits .intro .colum-features .intro h3 {
+    font-size: 2rem;
+  }
+  .sec-features .intro, .sec-benefits .intro .intro, .sec-onboarding .intro .intro {
+    max-width: 100%;
+    padding: 0%;
+  }
+  .sec-features .intro .colum-features, .sec-benefits .intro .intro .colum-features, .sec-onboarding .intro .intro .colum-features {
+    padding: 0%;
+  }
+  .sec-features .intro .text, .sec-benefits .intro .intro .text, .sec-onboarding .intro .intro .text {
+    margin: 0%;
+    max-width: 100%;
+  }
 }/*# sourceMappingURL=index.css.map */
